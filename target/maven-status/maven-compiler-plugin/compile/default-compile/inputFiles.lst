@@ -1,0 +1,14 @@
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/bean/Cliente.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/controller/ProdutoController.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/service/ProdutoService.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/repository/ClienteRepository.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/service/GerenteService.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/repository/GerenteRepository.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/bean/Produto.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/bean/Gerente.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/controller/GerenteController.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/service/UsuarioService.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/controller/ClienteController.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/controller/PrincipalController.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/repository/ProdutoRepository.java
+/home/lucas.lorenco/Documents/workspace-sts-3.9.5.RELEASE/phoneStore/src/main/java/br/ufc/npi/PhoneStoreApplication.java

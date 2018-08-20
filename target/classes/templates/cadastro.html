@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<title>PhoneStore</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+	</style>
+	
+	<body class="w3-light-grey w3-content" style="max-width:1600px">
+	
+  	<div class="w3-top">
+  		<div class="w3-bar w3-white w3-card" id="myNavbar">
+	    <a href="/protudos/" class="w3-bar-item w3-button w3-wide">PhoneStore</a>
+	    <div class="w3-right w3-hide-small">
+	    <a href="/protudos/" class="w3-bar-item w3-button">Produtos</a>
+	    <a href="#about" class="w3-bar-item w3-button">Cadastro</a>
+	    <a href="#about" class="w3-bar-item w3-button">Login</a>
+    </div>
+	  
+	  <!-- Contact Section -->
+	  <div class="w3-container w3-padding-large">
+	    <hr class="w3-opacity">
+	    <form action="/cliente/salvar" method="POST" target="_blank">
+	      <div class="w3-section">
+	        <label>Nome</label>
+	        <input class="w3-input w3-border" type="text" name="nome" id="nome" required>
+	      </div>
+	      <div class="w3-section">
+	        <label>Email</label>
+	        <input class="w3-input w3-border" type="text" name="email" id="email" required>
+	      </div>
+	      <div class="w3-section">
+	        <label>Senha</label>
+	        <input class="w3-input w3-border" type="password" name="senha" id="senha" required>
+	      </div>
+	      <button type="submit" class="w3-button w3-black w3-margin-bottom">Cadastrar</button>
+	    </form>
+	  </div>
+	
+	</div>
+	
+	<script>
+	// Script to open and close sidebar
+	function w3_open() {
+	    document.getElementById("mySidebar").style.display = "block";
+	    document.getElementById("myOverlay").style.display = "block";
+	}
+	 
+	function w3_close() {
+	    document.getElementById("mySidebar").style.display = "none";
+	    document.getElementById("myOverlay").style.display = "none";
+	}
+	</script>
+	
+	</body>
+</html>
