@@ -16,10 +16,10 @@ public class PrincipalController {
 		return "cadastro";
 	}
 	
-	/*@RequestMapping(path="/logar")
+	@RequestMapping(path="/logar")
 	public String logar() {
 		return "login";
-	}*/
+	}
 	
 	@RequestMapping(path="/produtos")
 	public String produtos() {

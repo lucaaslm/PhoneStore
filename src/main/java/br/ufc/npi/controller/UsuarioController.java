@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.ufc.npi.bean.Cliente;
-import br.ufc.npi.service.ClienteService;
+import br.ufc.npi.bean.Usuario;
+import br.ufc.npi.service.UsuarioService;
 
 @Controller
-@RequestMapping(path="/cliente")
-public class ClienteController {
+@RequestMapping(path="/usuario")
+public class UsuarioController {
 	@Autowired
-	ClienteService service;
+	UsuarioService service;
 	
 	@RequestMapping("/logar")
 	public ModelAndView logar() {
@@ -26,9 +26,9 @@ public class ClienteController {
 	@RequestMapping(path="/salvar", method=RequestMethod.POST)
 	public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
 		
-		Cliente user = new Cliente();
+		Usuario user = new Usuario();
 		user.setNome(nome);
-		user.setEmail(email);
+		user.setLogin(email);
 		user.setSenha(senha);
 		
 		service.salvarCliente(user);

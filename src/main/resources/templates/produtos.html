@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 	<title>PhoneStore</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="/webjars/materializecss/0.97.7/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<style>
 		body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</style>
@@ -17,104 +19,38 @@
 	
   	<div class="w3-top">
   		<div class="w3-bar w3-white w3-card" id="myNavbar">
-	    <a href="/protudos/" class="w3-bar-item w3-button w3-wide">PhoneStore</a>
+	    <a href="/produtos/" class="w3-bar-item w3-button w3-wide">PhoneStore</a>
 	    <div class="w3-right w3-hide-small">
-	    <a href="/protudos/" class="w3-bar-item w3-button">Produtos</a>
-	    <a href="#about" class="w3-bar-item w3-button">Cadastro</a>
-	    <a href="#about" class="w3-bar-item w3-button">Login</a>
+	    <a href="/produtos/" class="w3-bar-item w3-button">Produtos</a>
+	    <a href="/cadastro" class="w3-bar-item w3-button">Cadastro</a>
+	    <a href="/logar" class="w3-bar-item w3-button">Login</a>
+	    </div>
     </div>
-	 
-	  <div class="w3-row-padding">
-	    <div class="w3-third w3-container w3-margin-bottom">
-	      <img src="/img/celular4.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	    <div class="w3-third w3-container w3-margin-bottom">
-	      <img src="/img/celular2.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	    <div class="w3-third w3-container">
-	      <img src="/img/celular3.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	  </div>
+	
+	<div class="row">
+		<div class="col s3" th:each="produto: ${produtos}" >
+			<div class="card" style="border: 1px solid gray">
+				<div class="card-image">
+					<img style="height: 300px" th:src="@{${produto.caminhoImagem}}">
+				</div>
+					
+				<div class="card-content">
+					<p th:text="${produto.titulo}"></p>
+					<p th:text="${produto.valor}"></p>
+				</div>
+				<div class="card-action">
+					<a href=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
 	  
-	  <!-- Second Photo Grid-->
-	  <div class="w3-row-padding">
-	    <div class="w3-third w3-container w3-margin-bottom">
-	      <img src="/img/celular4.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	    <div class="w3-third w3-container w3-margin-bottom">
-	      <img src="/img/celular5.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	    <div class="w3-third w3-container">
-	      <img src="/img/celular6.jpeg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-	      <div class="w3-container w3-white">
-	        <p><b>Lorem Ipsum</b></p>
-	        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-	      </div>
-	    </div>
-	  </div>
 	
 	</div>
 	
-	<script>
-	// Script to open and close sidebar
-	function w3_open() {
-	    document.getElementById("mySidebar").style.display = "block";
-	    document.getElementById("myOverlay").style.display = "block";
-	}
-	 
-	function w3_close() {
-	    document.getElementById("mySidebar").style.display = "none";
-	    document.getElementById("myOverlay").style.display = "none";
-	}
-	</script>
+	<script src="/webjars/jquery/2.2.4/jquery.js"></script>
+	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
 	
 	</body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-<html
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
->
-	<head>
-		<title> PhoneStore </title>
-		<link href="/webjars/materializecss/0.97.7/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	</head>
-	
-	<body>
-		<div class="container">
-			<div class="row center">
-				<h1 class="header center green-text">PhoneStore</h1>
-			</div>
-		</div>
-		
-		<script src="/webjars/jquery/2.2.4/jquery.js"></script>
-		<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
-	</body>
-	
- </html> 
--->
 

@@ -3,10 +3,10 @@ package br.ufc.npi.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.ufc.npi.bean.Cliente;
+import br.ufc.npi.bean.Usuario;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-	Cliente findByEmail(String email);
+	Usuario findByEmail(String email);
 }

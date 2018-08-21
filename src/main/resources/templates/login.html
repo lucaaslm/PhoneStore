@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<title>PhoneStore</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +14,12 @@
 	
   	<div class="w3-top">
   		<div class="w3-bar w3-white w3-card" id="myNavbar">
-	    <a href="/protudos/" class="w3-bar-item w3-button w3-wide">PhoneStore</a>
+	    <a href="/produtos/" class="w3-bar-item w3-button w3-wide">PhoneStore</a>
 	    <div class="w3-right w3-hide-small">
-	    <a href="/protudos/" class="w3-bar-item w3-button">Produtos</a>
-	    <a href="#about" class="w3-bar-item w3-button">Cadastro</a>
-	    <a href="#about" class="w3-bar-item w3-button">Login</a>
+	    <a href="/produtos/" class="w3-bar-item w3-button">Produtos</a>
+	    <a href="/cadastro" class="w3-bar-item w3-button">Cadastro</a>
+	    <a href="/logar" class="w3-bar-item w3-button">Login</a>
+	    </div>
     </div>
     
 	  <!-- Contact Section -->
@@ -39,18 +40,6 @@
 	
 	</div>
 	
-	<script>
-	// Script to open and close sidebar
-	function w3_open() {
-	    document.getElementById("mySidebar").style.display = "block";
-	    document.getElementById("myOverlay").style.display = "block";
-	}
-	 
-	function w3_close() {
-	    document.getElementById("mySidebar").style.display = "none";
-	    document.getElementById("myOverlay").style.display = "none";
-	}
-	</script>
 	
 	</body>
 </html>
