@@ -2,8 +2,8 @@ package br.ufc.npi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,7 +23,13 @@ public class UsuarioController {
 		return mv;
 	}
 	
-	@RequestMapping(path="/salvar", method=RequestMethod.POST)
+	@RequestMapping("/cadastro")
+	public String cadastro() {
+		
+		return "cadastro";
+	}
+	
+	@PostMapping("/salvar")
 	public String salvarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
 		
 		Usuario user = new Usuario();

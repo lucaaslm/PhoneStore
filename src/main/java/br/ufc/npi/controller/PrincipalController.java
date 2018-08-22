@@ -8,7 +8,12 @@ public class PrincipalController {
 
 	@RequestMapping(path="/")
 	public String index() {
-		return "produtos";
+		return "redirect:/produtos/";
+	}
+	
+	@RequestMapping(path="/logout")
+	public String logout(){
+		return "login";
 	}
 	
 	@RequestMapping(path="/cadastro")
@@ -23,6 +28,6 @@ public class PrincipalController {
 	
 	@RequestMapping(path="/produtos")
 	public String produtos() {
-		return "produtos";
+		return "redirect:/produtos/";
 	}
 }

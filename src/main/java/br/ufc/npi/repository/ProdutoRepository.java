@@ -8,5 +8,4 @@ import br.ufc.npi.bean.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 	
-	Produto findById(int id);
 }

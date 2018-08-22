@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -19,19 +20,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		
-		http.csrf().disable()
+		http.csrf().disable() 
 		
 			.authorizeRequests()
 				.antMatchers("/css/**", "/js/**", "/img/**", "/webjars/**", "/images/**").permitAll()
-				.anyRequest().permitAll()
-				/*.authenticated()
-				/*.and().formLogin().permitAll()
+				.antMatchers("/usuario/cadastro").permitAll()
+				.anyRequest().authenticated()
+				
+				.and().formLogin().permitAll()
 				
 			.and()
-			.formLogin()
-				.loginPage("/usuarios/logar")
-				.permitAll()*/;
-		
+				.formLogin()
+					.loginPage("/usuario/logar")
+						.permitAll()
+			.and()
+				.logout()
+//					.logoutSuccessUrl("/login?logout")
+//						.permitAll()
+					.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 	
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
