@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
+Built-By: lucas
+Build-Jdk: 10.0.2
 Implementation-Title: phoneStore
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: 05442003301
 Implementation-Vendor-Id: br.ufc.npi
-Build-Jdk: 1.8.0_161
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/phoneStore
 Created-By: Maven Integration for Eclipse

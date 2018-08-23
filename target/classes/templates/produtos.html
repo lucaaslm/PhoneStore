@@ -38,11 +38,8 @@
 					<p th:text="${produto.valor}"></p>
 				</div>
 				<div class="card-action">
-					<!--  <button type="submit" class="w3-button w3-black w3-margin-bottom" th:href="@{/produtos/excluir/{id}(id = ${produto.id})}"
-					>Excluir</button>
-					<button type="submit" class="w3-button w3-black w3-margin-bottom edit">Editar</button>		-->
-					<a th:href="@{/produtos/excluir/{id}(id = ${produto.id})}">Excluir</a>
-					<a class="edit" th:attr="produtoId = ${produto.id}">Editar</a>
+					<a style="color: black" th:href="@{/produtos/excluir/{id}(id = ${produto.id})}">Excluir</a>
+					<a style="color: black" class="edit" th:attr="produtoId = ${produto.id}">Editar</a> 
 				</div>
 			</div>
 			<div class="card editar" th:id="editar-__${produto.id}__" style="border: 1px solid gray; height: 452px">
