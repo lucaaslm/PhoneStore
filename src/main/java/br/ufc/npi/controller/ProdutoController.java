@@ -61,8 +61,9 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("/editar/{id}")
-	public String editar(@PathVariable int id, String titulo, double valor) {
-		service.editarProduto(id, titulo, valor);
+	public String editar(@PathVariable int id, String titulo, double valor, String imagem) {
+		service.editarProduto(id, titulo, valor, imagem);
+		System.out.println("no controller: " + imagem);
 		
 		return "redirect:/produtos/";
 	}

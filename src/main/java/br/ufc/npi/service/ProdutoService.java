@@ -44,12 +44,14 @@ public class ProdutoService {
 		repo.deleteById(id);
 	}
 	
-	public void editarProduto(int id, String titulo, double valor) {
+	public void editarProduto(int id, String titulo, double valor, String caminhoImagem) {
 		Produto prod = new Produto();
 		prod.setId(id);
 		prod.setTitulo(titulo);
 		prod.setValor(valor);
-		
+		prod.setCaminhoImagem(caminhoImagem);
+		System.out.println("no service: " + caminhoImagem);
+	
 		repo.save(prod);
 	}
 	

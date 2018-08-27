@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col s3" th:each="produto: ${produtos}" >
 		
-			<div class="card show" style="border: 1px solid gray">
+			<div class="card show" th:id="show-__${produto.id}__" style="border: 1px solid gray">
 				<div class="card-image">
 					<img style="height: 300px" th:src="@{/produtos/images/__${produto.id}__}">
 				</div>
@@ -38,11 +38,8 @@
 					<p th:text="${produto.valor}"></p>
 				</div>
 				<div class="card-action">
-					<!--  <button type="submit" class="w3-button w3-black w3-margin-bottom" th:href="@{/produtos/excluir/{id}(id = ${produto.id})}"
-					>Excluir</button>
-					<button type="submit" class="w3-button w3-black w3-margin-bottom edit">Editar</button>		-->
 					<a th:href="@{/produtos/excluir/{id}(id = ${produto.id})}">Excluir</a>
-					<a class="edit" th:attr="produtoId = ${produto.id}">Editar</a>
+					<a class="edit" th:onclick="'javascript:editar(\'' + ${produto.caminhoImagem} + '\', \'' + editar-__${produto.id}__ + '\', \'' + show-__${produto.id}__ + '\', \'' + editar-imagem-__${produto.id}__ + '\');'" th:attr="produtoId = ${produto.id}">Editar</a>
 				</div>
 			</div>
 			<div class="card editar" th:id="editar-__${produto.id}__" style="border: 1px solid gray; height: 452px">
@@ -50,11 +47,14 @@
 					<form th:action="@{/produtos/editar/{id}(id = ${produto.id})}" method="POST">
 				      <div class="w3-section">
 				        <label>Titulo</label>
-				        <input class="w3-input w3-border" type="text" name="titulo" id="titulo" required>
+				        <input class="w3-input w3-border" type="text" name="titulo" id="edit-titulo" required>
 				      </div>
 				      <div class="w3-section">
 				        <label>Valor</label>
-				        <input class="w3-input w3-border" step="0.01" type="number" name="valor" id="valor" required>
+				        <input class="w3-input w3-border" step="0.01" type="number" name="valor" id="edit-valor" required>
+				      </div>
+				      <div class="w3-section">
+				        <input class="w3-input w3-border" type="text" name="imagem" th:id="editar-imagem-__${produto.id}__" hidden>
 				      </div>
 				      <button type="submit" class="w3-button w3-black w3-margin-bottom">Editar</button>
 				    </form>	
@@ -94,13 +94,14 @@
 	<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
 	
 	<script>
-		$(document).ready(function(){
-		        $(".editar").hide();
-		        $(".edit").click(function(){
-		        	$(".editar").show();
-		        	$(".show").hide();
-		        });
-		});
+	
+			 $(".editar").hide();
+	
+		function editar(caminho, idEditar, idShow, idImagem){
+			$("#" + idImagem).val(caminho);
+	    	$("#" + idEditar).show();
+        	$("#" + idShow).hide();
+	    };
 	</script>
 	
 	
